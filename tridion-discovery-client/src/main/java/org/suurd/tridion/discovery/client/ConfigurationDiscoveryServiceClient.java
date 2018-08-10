@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import com.sdl.delivery.configuration.Configuration;
 import com.sdl.delivery.configuration.ConfigurationException;
 import com.sdl.delivery.configuration.ConfigurationProvider;
-import com.sdl.delivery.configuration.ConfigurationResource;
 import com.sdl.delivery.configuration.Value;
 import com.sdl.web.discovery.delivery.configuration.CachingConfigurationProvider;
 import com.sdl.web.discovery.delivery.configuration.ODataConfigurationProvider;
@@ -26,15 +25,15 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 
 	private static final Logger LOG = LoggerFactory.getLogger(ConfigurationDiscoveryServiceClient.class);
 
-	private static final String STORAGE_CONFIG_FILE_NAME = "cd_storage_conf.xml";	
-
-	private static final String WEB_RESOURCE_NAME = "Web";
+	private static final String STORAGE_CONFIG_FILE_NAME = "cd_storage_conf.xml";
 
 	private static final String CONTENT_SERVICE_RESOURCE_NAME = "ContentService";
 
 	private static final String DEPLOYER_SERVICE_RESOURCE_NAME = "Deployer";
 
 	private static final String PREVIEW_WEB_SERVICE_RESOURCE_NAME = "PreviewWebService";
+
+	private static final String WEB_RESOURCE_NAME = "Web";
 
 	private ConfigurationProvider<ODataResourceDescriptor> configurationProvider;
 
@@ -52,18 +51,16 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		try {
-			ODataResourceDescriptor oDataResourceDescriptor = new ODataResourceDescriptor(STORAGE_CONFIG_FILE_NAME, CONTENT_SERVICE_RESOURCE_NAME);
-			ConfigurationResource contentServiceConfigurationResource = configurationProvider.provide(oDataResourceDescriptor);
-			Configuration contentServiceConfiguration = contentServiceConfigurationResource.getConfiguration();
-			
+			Configuration contentServiceConfiguration = getConfiguration(CONTENT_SERVICE_RESOURCE_NAME);
 			Value uri = contentServiceConfiguration.getValue("URI");
 			if (!uri.isNull()) {
 				contentServiceEndpoint = uri.asString();
 			}
 			
 		} catch (ConfigurationException e) {
-			LOG.error(e.getMessage(), e);
-			//TODO: Throw Exception
+			String message = "Error processing configuration resource";
+			LOG.error(message, e);
+			throw new DiscoveryServiceClientException(message, e);
 		}
 		
 		if (contentServiceEndpoint == null) {
@@ -83,18 +80,16 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		try {
-			ODataResourceDescriptor oDataResourceDescriptor = new ODataResourceDescriptor(STORAGE_CONFIG_FILE_NAME, DEPLOYER_SERVICE_RESOURCE_NAME);
-			ConfigurationResource deployerServiceConfigurationResource = configurationProvider.provide(oDataResourceDescriptor);
-			Configuration deployerServiceConfiguration = deployerServiceConfigurationResource.getConfiguration();
-			
+			Configuration deployerServiceConfiguration = getConfiguration(DEPLOYER_SERVICE_RESOURCE_NAME);
 			Value uri = deployerServiceConfiguration.getValue("URI");
 			if (!uri.isNull()) {
 				deployerServiceEndpoint = uri.asString();
 			}
 			
 		} catch (ConfigurationException e) {
-			LOG.error(e.getMessage(), e);
-			//TODO: Throw Exception
+			String message = "Error processing configuration resource";
+			LOG.error(message, e);
+			throw new DiscoveryServiceClientException(message, e);
 		}
 		
 		if (deployerServiceEndpoint == null) {
@@ -114,18 +109,16 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		try {
-			ODataResourceDescriptor oDataResourceDescriptor = new ODataResourceDescriptor(STORAGE_CONFIG_FILE_NAME, PREVIEW_WEB_SERVICE_RESOURCE_NAME);
-			ConfigurationResource previewWebServiceConfigurationResource = configurationProvider.provide(oDataResourceDescriptor);
-			Configuration previewWebServiceConfiguration = previewWebServiceConfigurationResource.getConfiguration();
-			
+			Configuration previewWebServiceConfiguration = getConfiguration(PREVIEW_WEB_SERVICE_RESOURCE_NAME);
 			Value uri = previewWebServiceConfiguration.getValue("URI");
 			if (!uri.isNull()) {
 				previewWebServiceEndpoint = uri.asString();
 			}
 			
 		} catch (ConfigurationException e) {
-			LOG.error(e.getMessage(), e);
-			//TODO: Throw Exception
+			String message = "Error processing configuration resource";
+			LOG.error(message, e);
+			throw new DiscoveryServiceClientException(message, e);
 		}
 		
 		if (previewWebServiceEndpoint == null) {
@@ -145,10 +138,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		try {
-			ODataResourceDescriptor oDataResourceDescriptor = new ODataResourceDescriptor(STORAGE_CONFIG_FILE_NAME, WEB_RESOURCE_NAME);
-			ConfigurationResource webConfigurationResource = configurationProvider.provide(oDataResourceDescriptor);
-			Configuration defaultWebConfiguration = webConfigurationResource.getConfiguration();
-			
+			Configuration defaultWebConfiguration = getConfiguration(WEB_RESOURCE_NAME);
 			for (Configuration webApplicationConfiguration : defaultWebConfiguration.getConfigurations()) {
 				Configuration publicationMappingConfiguration = webApplicationConfiguration.getConfiguration("PublicationMappings");
 				if (publicationMappingConfiguration != null) {
@@ -174,11 +164,11 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		} catch (ConfigurationException e) {
 			String message = "Error processing configuration resource";
 			LOG.error(message, e);
-			//TODO: Throw Exception
+			throw new DiscoveryServiceClientException(message, e);
 		} catch (URISyntaxException e) {
 			String message = "Error creating base URL";
 			LOG.error(message, e);
-			//TODO: Throw Exception
+			throw new DiscoveryServiceClientException(message, e);
 		}
 		
 		if (LOG.isDebugEnabled()) {
@@ -200,7 +190,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		
 		return baseUrls;
 	}
-	
+
 	public Map<String, String> getWebApplicationExtensionProperties(int publicationId) {
 		Map<String, String> extensionProperties = new HashMap<String, String>();
 		
@@ -209,10 +199,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		try {
-			ODataResourceDescriptor oDataResourceDescriptor = new ODataResourceDescriptor(STORAGE_CONFIG_FILE_NAME, WEB_RESOURCE_NAME);
-			ConfigurationResource webConfigurationResource = configurationProvider.provide(oDataResourceDescriptor);
-			Configuration defaultWebConfiguration = webConfigurationResource.getConfiguration();
-			
+			Configuration defaultWebConfiguration = getConfiguration(WEB_RESOURCE_NAME);
 			for (Configuration webApplicationConfiguration : defaultWebConfiguration.getConfigurations()) {
 				Configuration publicationMappingConfiguration = webApplicationConfiguration.getConfiguration("PublicationMappings");
 				if (publicationMappingConfiguration != null) {
@@ -236,7 +223,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		} catch (ConfigurationException e) {
 			String message = "Error processing configuration resource";
 			LOG.error(message, e);
-			//TODO: Throw Exception
+			throw new DiscoveryServiceClientException(message, e);
 		}
 		
 		if (LOG.isDebugEnabled()) {
@@ -263,6 +250,11 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		return extensionProperties;
+	}
+
+	protected Configuration getConfiguration(String resourceName) throws ConfigurationException {
+		ODataResourceDescriptor oDataResourceDescriptor = new ODataResourceDescriptor(STORAGE_CONFIG_FILE_NAME, resourceName);
+		return configurationProvider.provide(oDataResourceDescriptor).getConfiguration();
 	}
 
 }

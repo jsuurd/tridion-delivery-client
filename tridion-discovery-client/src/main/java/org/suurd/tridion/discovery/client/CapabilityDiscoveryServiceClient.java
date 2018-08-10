@@ -31,6 +31,8 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 
 	private static final Logger LOG = LoggerFactory.getLogger(CapabilityDiscoveryServiceClient.class);
 
+	private static final String CLIENT_CONFIG_FILENAME = "cd_client_conf.xml";
+
 	private CapabilityProvider capabilityProvider;
 
 	public CapabilityDiscoveryServiceClient()	{
@@ -38,10 +40,10 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 		initialize();
 	}
 
-	public void initialize() {
+	private void initialize() {
 		try {
 			XMLConfigurationReader<XMLConfigurationHolder> configurationReader = new XMLConfigurationReaderImpl();
-			ConfigurationHolder configurationHolder = configurationReader.readConfiguration("cd_client_conf.xml");
+			ConfigurationHolder configurationHolder = configurationReader.readConfiguration(CLIENT_CONFIG_FILENAME);
 			
 			Properties configValues = new Properties();
 			configValues.putAll(configurationHolder.getValues());
@@ -51,8 +53,9 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 			capabilityProvider = CapabilityProviderFactory.getCachingSecuredCapabilityProvider(configValues);
 			
 		} catch (ConfigurationException e) {
-			LOG.error(e.getMessage(), e);
-			//TODO: Throw Exception
+			String message = "Error reading cd client configuration";
+			LOG.error(message, e);
+			throw new DiscoveryServiceClientException(message, e);
 		}
 	}
 
@@ -142,8 +145,9 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 				}
 			}
 		} catch (URISyntaxException e) {
-			LOG.error(e.getMessage(), e);
-			//TODO: Throw Exception
+			String message = "Error creating base URL";
+			LOG.error(message, e);
+			throw new DiscoveryServiceClientException(message, e);
 		}
 		
 		if (LOG.isDebugEnabled()) {
