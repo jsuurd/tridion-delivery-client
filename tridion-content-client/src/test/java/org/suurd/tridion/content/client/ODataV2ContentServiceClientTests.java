@@ -23,11 +23,11 @@ public class ODataV2ContentServiceClientTests {
 
 	@Test
 	@Ignore("Integration Test")
-	public void getPage_WthValidPpageUri_ShouldReturnPage() throws ParseException {
-		TCMURI pageUri = new TCMURI("tcm:33-12440-64");
+	public void getPage_WithValidPageUri_ShouldReturnPage() throws ParseException {
+		TCMURI pageUri = new TCMURI("tcm:5-247-64");
 		
 		Page page = contentServiceClient.getPage(pageUri);
 		
-		assertNotNull(page);;
+		assertNotNull(page);
 	}
 }

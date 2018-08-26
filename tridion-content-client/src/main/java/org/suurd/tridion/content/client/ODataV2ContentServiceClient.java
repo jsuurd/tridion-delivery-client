@@ -14,17 +14,17 @@ public class ODataV2ContentServiceClient implements ContentServiceClient {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ODataV2ContentServiceClient.class);
 
+	@Override
 	public Page getPage(TCMURI pageUri) {
 		Page page = null;
 		
-		ContentClient contentClient = ContentClientProvider.getInstance().getContentClient();
-		
 		ODataClientQuery query = new ODataV2ClientQuery.Builder()
-				.withEntityType(Page.class)
+				.withEntityType(com.sdl.web.content.client.odata.v2.edm.Page.class)
 				.withEntityParameterMap("PublicationId", String.valueOf(pageUri.getPublicationId()))
 				.withEntityParameterMap("ItemId", String.valueOf(pageUri.getItemId()))
 				.build();
 		
+		ContentClient contentClient = ContentClientProvider.getInstance().getContentClient();
 		com.sdl.web.content.client.odata.v2.edm.Page pageEntity = (com.sdl.web.content.client.odata.v2.edm.Page)contentClient.getEntity(com.sdl.web.content.client.odata.v2.edm.Page.class.getName(), query);
 		if (pageEntity != null) {
 			page = new Page();
