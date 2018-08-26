@@ -21,6 +21,12 @@ import com.sdl.web.discovery.delivery.configuration.CachingConfigurationProvider
 import com.sdl.web.discovery.delivery.configuration.ODataConfigurationProvider;
 import com.sdl.web.discovery.delivery.configuration.ODataResourceDescriptor;
 
+/**
+ * Implementation of the discovery service client leveraging the
+ * {@link ConfigurationProvider} and {@link ODataResourceDescriptor}.
+ * 
+ * @author jsuurd
+ */
 public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClient {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ConfigurationDiscoveryServiceClient.class);

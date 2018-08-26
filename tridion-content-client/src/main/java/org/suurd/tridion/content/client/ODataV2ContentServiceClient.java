@@ -10,6 +10,12 @@ import com.sdl.web.content.client.ContentClientProvider;
 import com.sdl.web.content.client.ODataV2ClientQuery;
 import com.tridion.util.TCMURI;
 
+/**
+ * Implementation of the content service client leveraging the OData V2
+ * {@link ContentClient}.
+ * 
+ * @author jsuurd
+ */
 public class ODataV2ContentServiceClient implements ContentServiceClient {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ODataV2ContentServiceClient.class);
@@ -34,7 +40,7 @@ public class ODataV2ContentServiceClient implements ContentServiceClient {
 		}
 		
 		if (LOG.isDebugEnabled()) {
-			LOG.debug("Retrieved page [uri={}, title={}]", pageUri, page.getTitle());
+			LOG.debug("Retrieved page {}", page);
 		}
 		
 		return page;

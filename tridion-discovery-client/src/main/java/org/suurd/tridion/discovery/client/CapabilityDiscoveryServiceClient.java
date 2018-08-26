@@ -27,6 +27,11 @@ import com.sdl.web.discovery.datalayer.model.PublicationMapping;
 import com.sdl.web.discovery.datalayer.model.WebApplication;
 import com.sdl.web.discovery.datalayer.model.WebCapability;
 
+/**
+ * Implementation of the discovery service client leveraging the {@link CapabilityProvider}.
+ * 
+ * @author jsuurd
+ */
 public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CapabilityDiscoveryServiceClient.class);
@@ -158,7 +163,7 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 			boolean multipleBaseUrls = false;
 			for (String baseUrl : baseUrls) {
 				if (multipleBaseUrls) {
-					logMessage.append(", ");
+					logMessage.append(",");
 				}
 				logMessage.append(baseUrl);
 				multipleBaseUrls = true;
