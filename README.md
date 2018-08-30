@@ -1,29 +1,18 @@
-# README
+# Tridion Content Delivery Client for Java
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Java client for the SDL Tridion Content Delivery micro-services.
 
-### What is this repository for?
+## Description
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+The SDL Tridion Content Delivery architecture consists out of a collection of micro-services. This project provides a generic client implementation for several of the micro-services. The implementation can be used as-is or serve as an example how to implement such clients.
 
-### How do I get set up?
+Currently clients are provided for the following micro-services:
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Discovery Service - Service to retrieve environment capabilities
+* Content Service - Service to retrieve published content
 
-### Contribution guidelines
+## Dependencies
 
-* Writing tests
-* Code review
-* Other guidelines
+This project depends on proprietary SDL Tridion libraries that are not publicly available. Use the `Install-LocalDependencies.ps1` script to install these dependencies to the local Maven repository.
 
-### Who do I talk to?
-
-* Repo owner or admin
-* Other community or team contact
+	.\Install-LocalDependencies.ps1 -Path <path-to-tridion-jars> 
