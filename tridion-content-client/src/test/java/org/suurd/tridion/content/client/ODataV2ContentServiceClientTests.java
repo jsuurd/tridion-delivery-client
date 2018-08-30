@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.suurd.tridion.content.client.ODataV2ContentServiceClient;
+import org.suurd.tridion.content.client.model.Binary;
 import org.suurd.tridion.content.client.model.Page;
 
 import com.tridion.util.TCMURI;
@@ -23,11 +24,22 @@ public class ODataV2ContentServiceClientTests {
 
 	@Test
 	@Ignore("Integration Test")
-	public void getPage_WithValidPageUri_ShouldReturnPage() throws ParseException {
-		TCMURI pageUri = new TCMURI("tcm:5-247-64");
+	public void getBinary_WithValidBinaryId_ShouldReturnBinary() throws ParseException {
+		TCMURI binaryId = new TCMURI("tcm:5-272");
 		
-		Page page = contentServiceClient.getPage(pageUri);
+		Binary binary = contentServiceClient.getBinary(binaryId);
+		
+		assertNotNull(binary);
+	}
+
+	@Test
+	@Ignore("Integration Test")
+	public void getPage_WithValidPageId_ShouldReturnPage() throws ParseException {
+		TCMURI pageId = new TCMURI("tcm:5-247-64");
+		
+		Page page = contentServiceClient.getPage(pageId);
 		
 		assertNotNull(page);
 	}
+
 }

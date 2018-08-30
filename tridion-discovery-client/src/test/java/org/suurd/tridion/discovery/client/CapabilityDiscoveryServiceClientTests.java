@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.suurd.tridion.discovery.client.DiscoveryServiceClient;
 import org.suurd.tridion.discovery.client.CapabilityDiscoveryServiceClient;
@@ -19,6 +20,7 @@ public class CapabilityDiscoveryServiceClientTests {
 	}
 
 	@Test
+	@Ignore("Integration Test")
 	public void getContentServiceEndpoint_ShouldReturnEndpoint() {
 		String contentServiceEndpoint = discoveryServiceClient.getContentServiceEndpoint();
 		
@@ -26,6 +28,7 @@ public class CapabilityDiscoveryServiceClientTests {
 	}
 
 	@Test
+	@Ignore("Integration Test")
 	public void getDeployerServiceEndpoint_ShouldReturnEndpoint() {
 		String deployerServiceEndpoint = discoveryServiceClient.getDeployerServiceEndpoint();
 		
@@ -33,6 +36,7 @@ public class CapabilityDiscoveryServiceClientTests {
 	}
 
 	@Test
+	@Ignore("Integration Test")
 	public void getPreviewWebServiceEndpoint_ShouldReturnEndpoint() {
 		String previewWebServiceEndpoint = discoveryServiceClient.getPreviewWebServiceEndpoint();
 		
@@ -40,10 +44,12 @@ public class CapabilityDiscoveryServiceClientTests {
 	}
 
 	@Test
+	@Ignore("Integration Test")
 	public void getWebApplicationBaseUrls_ShouldReturnBaseUrls() {
 		List<String> baseUrls = discoveryServiceClient.getWebApplicationBaseUrls(124);
 		
 		assertNotNull(baseUrls);
 		assertTrue(baseUrls.size() == 0);
 	}
+
 }

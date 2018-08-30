@@ -1,41 +1,16 @@
 package org.suurd.tridion.content.client.model;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
-import com.tridion.util.TCMURI;
-
 /**
- * Model representing a Tridon page.
+ * Model representing a Tridion page.
  * 
  * @author jsuurd
  *
  */
-public class Page {
-
-	private TCMURI id;
+public class Page extends AbstractIdentifiableItem {
 
 	private String title;
 
 	private String url;
-
-	/**
-	 * Gets the page ID.
-	 * 
-	 * @return the ID
-	 */
-	public TCMURI getId() {
-		return id;
-	}
-
-	/**
-	 * Set the page ID.
-	 * 
-	 * @param ID the ID to set
-	 */
-	public void setId(TCMURI id) {
-		this.id = id;
-	}
 
 	/**
 	 * Get the page title.
@@ -71,11 +46,6 @@ public class Page {
 	 */
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
 	}
 
 }
