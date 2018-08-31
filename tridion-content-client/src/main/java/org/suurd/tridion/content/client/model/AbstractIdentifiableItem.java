@@ -24,7 +24,7 @@ public abstract class AbstractIdentifiableItem extends AbstractModel {
 	/**
 	 * Set the item ID.
 	 * 
-	 * @param ID the ID to set
+	 * @param id the ID to set
 	 */
 	public void setId(TCMURI id) {
 		this.id = id;
