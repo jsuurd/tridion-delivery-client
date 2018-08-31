@@ -45,8 +45,8 @@ public class CapabilityDiscoveryServiceClientTests {
 
 	@Test
 	@Ignore("Integration Test")
-	public void getWebApplicationBaseUrls_ShouldReturnBaseUrls() {
-		List<String> baseUrls = discoveryServiceClient.getWebApplicationBaseUrls(124);
+	public void getWebApplicationBaseUrls_ShouldReturnEmptyBaseUrls() {
+		List<String> baseUrls = discoveryServiceClient.getWebApplicationBaseUrls(5);
 		
 		assertNotNull(baseUrls);
 		assertTrue(baseUrls.size() == 0);
