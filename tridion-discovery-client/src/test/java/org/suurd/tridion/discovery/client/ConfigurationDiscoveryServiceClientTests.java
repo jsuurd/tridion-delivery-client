@@ -53,7 +53,7 @@ public class ConfigurationDiscoveryServiceClientTests {
 	@Test
 	@Ignore("Integration Test")
 	public void getWebApplicationExtensionProperties_WithExtensionProperties_ShouldReturnExtensionPropertiesMap() {
-		Map<String, String> extensionProperties = discoveryServiceClient.getWebApplicationExtensionProperties(6);
+		Map<String, String> extensionProperties = discoveryServiceClient.getWebApplicationExtensionProperties(7);
 		
 		assertTrue(extensionProperties.size() > 0);
 	}
