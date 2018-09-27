@@ -48,6 +48,11 @@
 			</dependency>
 			<dependency>
 				<groupId>com.tridion</groupId>
+				<artifactId>cd_common_config</artifactId>
+				<version>8.1.0-1219</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tridion</groupId>
 				<artifactId>cd_common_config_api</artifactId>
 				<version>8.1.0-1219</version>
 			</dependency>
