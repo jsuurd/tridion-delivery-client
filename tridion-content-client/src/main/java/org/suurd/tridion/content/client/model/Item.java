@@ -4,12 +4,12 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * Abstract model class.
+ * Abstract model representing a Tridion item.
  * 
  * @author jsuurd
  *
  */
-public abstract class AbstractModel {
+public abstract class Item {
 
 	@Override
 	public String toString() {
