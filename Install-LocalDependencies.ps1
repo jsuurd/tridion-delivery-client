@@ -29,8 +29,6 @@ function Install-JarFile
 }
 
 # SDL Web 8.1.0
-Install-JarFile -File "$Path\cd_deployer-8.1.0-1232.jar" -GroupId 'com.sdl.delivery' -ArtifactId 'cd_deployer' -Version '8.1.0-1232'
-
 Install-JarFile -File "$Path\odata_api-2.0.0-1218.jar" -GroupId 'com.sdl.odata' -ArtifactId 'odata_api' -Version '2.0.0-1218'
 Install-JarFile -File "$Path\odata_client-2.0.0-1218.jar" -GroupId 'com.sdl.odata' -ArtifactId 'odata_client' -Version '2.0.0-1218'
 Install-JarFile -File "$Path\odata_client_api-2.0.0-1218.jar" -GroupId 'com.sdl.odata' -ArtifactId 'odata_client_api' -Version '2.0.0-1218'
@@ -39,8 +37,8 @@ Install-JarFile -File "$Path\odata_parser-2.0.0-1218.jar" -GroupId 'com.sdl.odat
 Install-JarFile -File "$Path\odata_renderer-2.0.0-1218.jar" -GroupId 'com.sdl.odata' -ArtifactId 'odata_renderer' -Version '2.0.0-1218'
 
 Install-JarFile -File "$Path\content-api-8.1.0-1230.jar" -GroupId 'com.sdl.web' -ArtifactId 'content-api' -Version '8.1.0-1230'
-Install-JarFile -File "$Path\content-model-8.1.0-1230.jar" -GroupId 'com.sdl.web' -ArtifactId 'content-model' -Version '8.1.0-1230'
 Install-JarFile -File "$Path\content-client-api-8.1.0-1233.jar" -GroupId 'com.sdl.web' -ArtifactId 'content-client-api' -Version '8.1.0-1233'
+Install-JarFile -File "$Path\content-model-8.1.0-1230.jar" -GroupId 'com.sdl.web' -ArtifactId 'content-model' -Version '8.1.0-1230'
 Install-JarFile -File "$Path\discovery-client-8.1.0-1228.jar" -GroupId 'com.sdl.web' -ArtifactId 'discovery-client' -Version '8.1.0-1228'
 Install-JarFile -File "$Path\discovery-client-lightweight-8.1.0-1228.jar" -GroupId 'com.sdl.web' -ArtifactId 'discovery-client-lightweight' -Version '8.1.0-1228'
 Install-JarFile -File "$Path\discovery-common-8.1.0-1228.jar" -GroupId 'com.sdl.web' -ArtifactId 'discovery-common' -Version '8.1.0-1228'
