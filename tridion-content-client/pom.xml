@@ -20,6 +20,10 @@
 			<artifactId>content-client-api</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.sdl.web</groupId>
+			<artifactId>content-model</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.tridion</groupId>
 			<artifactId>cd_core</artifactId>
 		</dependency>
@@ -64,11 +68,6 @@
 		<dependency>
 			<groupId>com.sdl.web</groupId>
 			<artifactId>content-api</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.sdl.web</groupId>
-			<artifactId>content-model</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
