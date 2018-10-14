@@ -40,12 +40,12 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 
 	private CapabilityProvider capabilityProvider;
 
-	public CapabilityDiscoveryServiceClient()	{
+	/**
+	 * Constructs a capability discovery service client.
+	 */
+	public CapabilityDiscoveryServiceClient() {
 		super();
-		initialize();
-	}
-
-	private void initialize() {
+	
 		try {
 			XMLConfigurationReader<XMLConfigurationHolder> configurationReader = new XMLConfigurationReaderImpl();
 			ConfigurationHolder configurationHolder = configurationReader.readConfiguration(CLIENT_CONFIG_FILENAME);
@@ -64,6 +64,7 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 		}
 	}
 
+	@Override
 	public String getContentServiceEndpoint() {
 		String contentServiceEndpoint = null;
 		
@@ -85,6 +86,7 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 		return contentServiceEndpoint;
 	}
 
+	@Override
 	public String getDeployerServiceEndpoint() {
 		String deployerServiceEndpoint = null;
 		
@@ -106,6 +108,7 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 		return deployerServiceEndpoint;
 	}
 
+	@Override
 	public String getPreviewWebServiceEndpoint() {
 		String previewWebServiceEndpoint = null;
 		
@@ -127,6 +130,7 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 		return previewWebServiceEndpoint;
 	}
 
+	@Override
 	public List<String> getWebApplicationBaseUrls(int publicationId) {
 		List<String> baseUrls = new ArrayList<String>();
 		
@@ -175,6 +179,7 @@ public class CapabilityDiscoveryServiceClient implements DiscoveryServiceClient 
 		return baseUrls;
 	}
 
+	@Override
 	public Map<String, String> getWebApplicationExtensionProperties(int publicationId) {
 		return null;
 	}

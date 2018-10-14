@@ -25,11 +25,11 @@ public class Page extends WebResourceItem {
 	private String pagePath;
 
 	private ZonedDateTime creationDate;
-	
+
 	private ZonedDateTime modificationDate;
 
 	private ZonedDateTime initialPublishDate;
-	
+
 	private ZonedDateTime lastPublishDate;
 
 	private int majorVersion;
@@ -37,6 +37,8 @@ public class Page extends WebResourceItem {
 	private int minorVersion;
 
 	/**
+	 * Gets the item ID.
+	 * 
 	 * @return the itemId
 	 */
 	public TCMURI getItemId() {
@@ -44,13 +46,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param itemId the itemId to set
+	 * Sets the item ID.
+	 * 
+	 * @param itemId the item ID to set
 	 */
 	public void setItemId(TCMURI itemId) {
 		this.itemId = itemId;
 	}
 
 	/**
+	 * Gets the owning publication.
+	 * 
 	 * @return the owningPublication
 	 */
 	public TCMURI getOwningPublication() {
@@ -58,13 +64,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param owningPublication the owningPublication to set
+	 * Sets the owning publication.
+	 * 
+	 * @param owningPublication the owning publication to set
 	 */
 	public void setOwningPublication(TCMURI owningPublication) {
 		this.owningPublication = owningPublication;
 	}
 
 	/**
+	 * Gets the template ID.
+	 * 
 	 * @return the templateId
 	 */
 	public TCMURI getTemplateId() {
@@ -72,13 +82,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param templateId the templateId to set
+	 * Sets the template ID.
+	 * 
+	 * @param templateId the template ID to set
 	 */
 	public void setTemplateId(TCMURI templateId) {
 		this.templateId = templateId;
 	}
 
 	/**
+	 * Gets the title.
+	 * 
 	 * @return the title
 	 */
 	public String getTitle() {
@@ -86,6 +100,8 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
+	 * Sets the title.
+	 * 
 	 * @param title the title to set
 	 */
 	public void setTitle(String title) {
@@ -93,6 +109,8 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
+	 * Gets the author.
+	 * 
 	 * @return the author
 	 */
 	public String getAuthor() {
@@ -100,6 +118,8 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
+	 * Sets the author.
+	 * 
 	 * @param author the author to set
 	 */
 	public void setAuthor(String author) {
@@ -107,6 +127,8 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
+	 * Gets the page path.
+	 * 
 	 * @return the pagePath
 	 */
 	public String getPagePath() {
@@ -114,13 +136,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param pagePath the pagePath to set
+	 * Sets the page path.
+	 * 
+	 * @param pagePath the page path to set
 	 */
 	public void setPagePath(String pagePath) {
 		this.pagePath = pagePath;
 	}
 
 	/**
+	 * Gets the creation date.
+	 * 
 	 * @return the creationDate
 	 */
 	public ZonedDateTime getCreationDate() {
@@ -128,13 +154,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param creationDate the creationDate to set
+	 * Sets the creation date.
+	 * 
+	 * @param creationDate the creation date to set
 	 */
 	public void setCreationDate(ZonedDateTime creationDate) {
 		this.creationDate = creationDate;
 	}
 
 	/**
+	 * Gets the modification date.
+	 * 
 	 * @return the modificationDate
 	 */
 	public ZonedDateTime getModificationDate() {
@@ -142,13 +172,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param modificationDate the modificationDate to set
+	 * Sets the modification date.
+	 * 
+	 * @param modificationDate the modification date to set
 	 */
 	public void setModificationDate(ZonedDateTime modificationDate) {
 		this.modificationDate = modificationDate;
 	}
 
 	/**
+	 * Gets the initial publish date.
+	 * 
 	 * @return the initialPublishDate
 	 */
 	public ZonedDateTime getInitialPublishDate() {
@@ -156,13 +190,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param initialPublishDate the initialPublishDate to set
+	 * Sets the initial publish date.
+	 * 
+	 * @param initialPublishDate the initial publish date to set
 	 */
 	public void setInitialPublishDate(ZonedDateTime initialPublishDate) {
 		this.initialPublishDate = initialPublishDate;
 	}
 
 	/**
+	 * Gets the last publish date.
+	 * 
 	 * @return the lastPublishDate
 	 */
 	public ZonedDateTime getLastPublishDate() {
@@ -170,13 +208,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param lastPublishDate the lastPublishDate to set
+	 * Sets the last publish date.
+	 * 
+	 * @param lastPublishDate the last publish date to set
 	 */
 	public void setLastPublishDate(ZonedDateTime lastPublishDate) {
 		this.lastPublishDate = lastPublishDate;
 	}
 
 	/**
+	 * Gets the major version.
+	 * 
 	 * @return the majorVersion
 	 */
 	public int getMajorVersion() {
@@ -184,13 +226,17 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param majorVersion the majorVersion to set
+	 * Sets the major version.
+	 * 
+	 * @param majorVersion the major version to set
 	 */
 	public void setMajorVersion(int majorVersion) {
 		this.majorVersion = majorVersion;
 	}
 
 	/**
+	 * Gets the minor version.
+	 * 
 	 * @return the minorVersion
 	 */
 	public int getMinorVersion() {
@@ -198,7 +244,9 @@ public class Page extends WebResourceItem {
 	}
 
 	/**
-	 * @param minorVersion the minorVersion to set
+	 * Sets the minor version.
+	 * 
+	 * @param minorVersion the minor version to set
 	 */
 	public void setMinorVersion(int minorVersion) {
 		this.minorVersion = minorVersion;

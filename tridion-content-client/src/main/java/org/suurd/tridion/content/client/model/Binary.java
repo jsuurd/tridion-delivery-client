@@ -19,6 +19,8 @@ public class Binary extends Item {
 	private List<BinaryVariant> binaryVariants;
 
 	/**
+	 * Gets the binary ID.
+	 * 
 	 * @return the binaryId
 	 */
 	public TCMURI getBinaryId() {
@@ -26,13 +28,17 @@ public class Binary extends Item {
 	}
 
 	/**
-	 * @param binaryId the binaryId to set
+	 * Sets the binary ID.
+	 * 
+	 * @param binaryId the binary ID to set
 	 */
 	public void setBinaryId(TCMURI binaryId) {
 		this.binaryId = binaryId;
 	}
 
 	/**
+	 * Gets the type.
+	 * 
 	 * @return the type
 	 */
 	public String getType() {
@@ -40,6 +46,8 @@ public class Binary extends Item {
 	}
 
 	/**
+	 * Sets the type.
+	 * 
 	 * @param type the type to set
 	 */
 	public void setType(String type) {
@@ -47,6 +55,8 @@ public class Binary extends Item {
 	}
 
 	/**
+	 * Gets the binary variants.
+	 * 
 	 * @return the binaryVariants
 	 */
 	public List<BinaryVariant> getBinaryVariants() {
@@ -54,7 +64,9 @@ public class Binary extends Item {
 	}
 
 	/**
-	 * @param binaryVariants the binaryVariants to set
+	 * Sets the binary variants.
+	 * 
+	 * @param binaryVariants the binary variants to set
 	 */
 	public void setBinaryVariants(List<BinaryVariant> binaryVariants) {
 		this.binaryVariants = binaryVariants;

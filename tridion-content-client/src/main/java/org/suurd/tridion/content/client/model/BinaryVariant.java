@@ -25,76 +25,8 @@ public class BinaryVariant extends WebResourceItem {
 	private TCMURI structureGroupId;
 
 	/**
-	 * @return the variantId
-	 */
-	public String getVariantId() {
-		return variantId;
-	}
-
-	/**
-	 * @param variantId the variantId to set
-	 */
-	public void setVariantId(String variantId) {
-		this.variantId = variantId;
-	}
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	/**
-	 * @return the type
-	 */
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * @param type the type to set
-	 */
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	/**
-	 * @return the isComponent
-	 */
-	public boolean isComponent() {
-		return isComponent;
-	}
-
-	/**
-	 * @param isComponent the isComponent to set
-	 */
-	public void setComponent(boolean isComponent) {
-		this.isComponent = isComponent;
-	}
-
-	/**
-	 * @return the path
-	 */
-	public String getPath() {
-		return path;
-	}
-
-	/**
-	 * @param path the path to set
-	 */
-	public void setPath(String path) {
-		this.path = path;
-	}
-
-	/**
+	 * Gets the binary ID.
+	 * 
 	 * @return the binaryId
 	 */
 	public TCMURI getBinaryId() {
@@ -102,6 +34,8 @@ public class BinaryVariant extends WebResourceItem {
 	}
 
 	/**
+	 * Sets the binary ID.
+	 * 
 	 * @param binaryId the binaryId to set
 	 */
 	public void setBinaryId(TCMURI binaryId) {
@@ -109,6 +43,98 @@ public class BinaryVariant extends WebResourceItem {
 	}
 
 	/**
+	 * Gets the variant ID.
+	 * 
+	 * @return the variantId
+	 */
+	public String getVariantId() {
+		return variantId;
+	}
+
+	/**
+	 * Sets the variant ID.
+	 * 
+	 * @param variantId the variant ID to set
+	 */
+	public void setVariantId(String variantId) {
+		this.variantId = variantId;
+	}
+
+	/**
+	 * Gets the description.
+	 * 
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * Sets the description.
+	 * 
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	 * Gets the type.
+	 * 
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * Sets the type.
+	 * 
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * Gets the is component.
+	 * 
+	 * @return the isComponent
+	 */
+	public boolean isComponent() {
+		return isComponent;
+	}
+
+	/**
+	 * Sets the is component.
+	 * 
+	 * @param isComponent the is component to set
+	 */
+	public void setComponent(boolean isComponent) {
+		this.isComponent = isComponent;
+	}
+
+	/**
+	 * Gets the path.
+	 * 
+	 * @return the path
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * Sets the path.
+	 * 
+	 * @param path the path to set
+	 */
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	/**
+	 * Gets the structure group ID.
+	 * 
 	 * @return the structureGroupId
 	 */
 	public TCMURI getStructureGroupId() {
@@ -116,6 +142,8 @@ public class BinaryVariant extends WebResourceItem {
 	}
 
 	/**
+	 * Sets the structure group ID.
+	 * 
 	 * @param structureGroupId the structureGroupId to set
 	 */
 	public void setStructureGroupId(TCMURI structureGroupId) {

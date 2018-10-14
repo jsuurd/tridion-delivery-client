@@ -11,19 +11,19 @@ public class DiscoveryServiceClientException extends RuntimeException {
 	private static final long serialVersionUID = -4134591130115494695L;
 
 	/**
-	 * Constructs a new discovery service client exception with the specified detail message.
+	 * Constructs a new discovery service client exception with the specified message.
 	 * 
-	 * @param message the detail message 
+	 * @param message the message 
 	 */
 	public DiscoveryServiceClientException(String message) {
 		super(message);
 	}
 
 	/**
-	 * Constructs a new discovery service client exception with the specified detail message and
+	 * Constructs a new discovery service client exception with the specified message and
 	 * cause.
 	 * 
-	 * @param message the detail message 
+	 * @param message the message 
 	 * @param cause the cause
 	 */
 	public DiscoveryServiceClientException(String message, Throwable cause) {

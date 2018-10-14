@@ -22,7 +22,7 @@ public abstract class WebResourceItem extends Item {
 	/**
 	 * Set the item URL.
 	 * 
-	 * @param id the URL to set
+	 * @param url the URL to set
 	 */
 	public void setUrl(String url) {
 		this.url = url;
