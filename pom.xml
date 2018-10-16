@@ -3,7 +3,7 @@
 	
 	<groupId>org.suurd.tridion</groupId>
 	<artifactId>tridion-delivery-client</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.1.0</version>
 	<packaging>pom</packaging>
 	<name>Tridion Content Delivery Client</name>
 	<url>https://bitbucket.org/jsuurd/tridion-delivery-client</url>
