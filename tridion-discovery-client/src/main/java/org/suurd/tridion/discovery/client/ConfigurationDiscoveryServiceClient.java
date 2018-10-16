@@ -104,7 +104,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		if (deployerServiceEndpoint == null) {
-			LOG.warn("Deployer endpoint not found");
+			LOG.warn("Deployer Service endpoint not found");
 		} else if (LOG.isDebugEnabled()) {
 			LOG.debug("Retrieved Deployer Service endpoint [uri={}]", deployerServiceEndpoint);
 		}
@@ -134,7 +134,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		if (previewWebServiceEndpoint == null) {
-			LOG.warn("Deployer endpoint not found");
+			LOG.warn("Preview Web Service endpoint not found");
 		} else if (LOG.isDebugEnabled()) {
 			LOG.debug("Retrieved Preview Web Service endpoint [uri={}]", previewWebServiceEndpoint);
 		}
