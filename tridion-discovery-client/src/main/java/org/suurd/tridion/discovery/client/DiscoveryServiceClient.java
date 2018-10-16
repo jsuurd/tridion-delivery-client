@@ -12,14 +12,14 @@ import java.util.Map;
 public interface DiscoveryServiceClient {
 
 	/**
-	 * Gets the endpoint of the content service capability.
+	 * Gets the endpoint of the content service.
 	 * 
 	 * @return the endpoint
 	 */
 	String getContentServiceEndpoint();
 
 	/**
-	 * Gets the endpoint of the deployer service capability.
+	 * Gets the endpoint of the deployer service.
 	 * 
 	 * @return the endpoint
 	 */

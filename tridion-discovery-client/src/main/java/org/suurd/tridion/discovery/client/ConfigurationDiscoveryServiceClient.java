@@ -43,12 +43,16 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 
 	private ConfigurationProvider<ODataResourceDescriptor> configurationProvider;
 
+	/**
+	 * Constructs a configuration discovery service client.
+	 */
 	@SuppressWarnings("unchecked")
 	public ConfigurationDiscoveryServiceClient() {
 		super();
 		this.configurationProvider = new CachingConfigurationProvider(new ODataConfigurationProvider());
 	}
 
+	@Override
 	public String getContentServiceEndpoint() {
 		String contentServiceEndpoint = null;
 		
@@ -78,6 +82,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		return contentServiceEndpoint;
 	}
 
+	@Override
 	public String getDeployerServiceEndpoint() {
 		String deployerServiceEndpoint = null;
 		
@@ -99,7 +104,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		if (deployerServiceEndpoint == null) {
-			LOG.warn("Deployer endpoint not found");
+			LOG.warn("Deployer Service endpoint not found");
 		} else if (LOG.isDebugEnabled()) {
 			LOG.debug("Retrieved Deployer Service endpoint [uri={}]", deployerServiceEndpoint);
 		}
@@ -107,6 +112,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		return deployerServiceEndpoint;
 	}
 
+	@Override
 	public String getPreviewWebServiceEndpoint() {
 		String previewWebServiceEndpoint = null;
 		
@@ -128,7 +134,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		}
 		
 		if (previewWebServiceEndpoint == null) {
-			LOG.warn("Deployer endpoint not found");
+			LOG.warn("Preview Web Service endpoint not found");
 		} else if (LOG.isDebugEnabled()) {
 			LOG.debug("Retrieved Preview Web Service endpoint [uri={}]", previewWebServiceEndpoint);
 		}
@@ -136,6 +142,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		return previewWebServiceEndpoint;
 	}
 
+	@Override
 	public List<String> getWebApplicationBaseUrls(int publicationId) {
 		List<String> baseUrls = new ArrayList<String>();
 		
@@ -197,6 +204,7 @@ public class ConfigurationDiscoveryServiceClient implements DiscoveryServiceClie
 		return baseUrls;
 	}
 
+	@Override
 	public Map<String, String> getWebApplicationExtensionProperties(int publicationId) {
 		Map<String, String> extensionProperties = new HashMap<String, String>();
 		

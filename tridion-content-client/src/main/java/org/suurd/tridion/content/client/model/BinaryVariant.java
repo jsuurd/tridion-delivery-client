@@ -1,34 +1,122 @@
 package org.suurd.tridion.content.client.model;
 
+import com.tridion.util.TCMURI;
+
 /**
  * Model representing a Tridion binary variant.
  * 
  * @author jsuurd
  *
  */
-public class BinaryVariant extends AbstractModel {
+public class BinaryVariant extends WebResourceItem {
+
+	private TCMURI binaryId;
 
 	private String variantId;
 
+	private String description;
+
+	private String type;
+
+	private boolean isComponent;
+
 	private String path;
 
-	private String url;
+	private TCMURI structureGroupId;
 
 	/**
-	 * @return the variant id
+	 * Gets the binary ID.
+	 * 
+	 * @return the binaryId
+	 */
+	public TCMURI getBinaryId() {
+		return binaryId;
+	}
+
+	/**
+	 * Sets the binary ID.
+	 * 
+	 * @param binaryId the binaryId to set
+	 */
+	public void setBinaryId(TCMURI binaryId) {
+		this.binaryId = binaryId;
+	}
+
+	/**
+	 * Gets the variant ID.
+	 * 
+	 * @return the variantId
 	 */
 	public String getVariantId() {
 		return variantId;
 	}
 
 	/**
-	 * @param variantId the variant id to set
+	 * Sets the variant ID.
+	 * 
+	 * @param variantId the variant ID to set
 	 */
 	public void setVariantId(String variantId) {
 		this.variantId = variantId;
 	}
 
 	/**
+	 * Gets the description.
+	 * 
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * Sets the description.
+	 * 
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	 * Gets the type.
+	 * 
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * Sets the type.
+	 * 
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * Gets the is component.
+	 * 
+	 * @return the isComponent
+	 */
+	public boolean isComponent() {
+		return isComponent;
+	}
+
+	/**
+	 * Sets the is component.
+	 * 
+	 * @param isComponent the is component to set
+	 */
+	public void setComponent(boolean isComponent) {
+		this.isComponent = isComponent;
+	}
+
+	/**
+	 * Gets the path.
+	 * 
 	 * @return the path
 	 */
 	public String getPath() {
@@ -36,6 +124,8 @@ public class BinaryVariant extends AbstractModel {
 	}
 
 	/**
+	 * Sets the path.
+	 * 
 	 * @param path the path to set
 	 */
 	public void setPath(String path) {
@@ -43,17 +133,21 @@ public class BinaryVariant extends AbstractModel {
 	}
 
 	/**
-	 * @return the url
+	 * Gets the structure group ID.
+	 * 
+	 * @return the structureGroupId
 	 */
-	public String getUrl() {
-		return url;
+	public TCMURI getStructureGroupId() {
+		return structureGroupId;
 	}
 
 	/**
-	 * @param url the url to set
+	 * Sets the structure group ID.
+	 * 
+	 * @param structureGroupId the structureGroupId to set
 	 */
-	public void setUrl(String url) {
-		this.url = url;
+	public void setStructureGroupId(TCMURI structureGroupId) {
+		this.structureGroupId = structureGroupId;
 	}
 
 }

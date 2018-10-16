@@ -40,7 +40,7 @@ public class ODataV2ContentServiceClient implements ContentServiceClient {
 		com.sdl.web.content.client.odata.v2.edm.BinaryMeta binaryMetaEntity = (com.sdl.web.content.client.odata.v2.edm.BinaryMeta)contentClient.getEntity(com.sdl.web.content.client.odata.v2.edm.BinaryMeta.class.getName(), query);
 		if (binaryMetaEntity != null) {
 			binary = new Binary();
-			binary.setId(new TCMURI(binaryMetaEntity.getPublicationId(), binaryMetaEntity.getBinaryId(), 16, 0));
+			binary.setBinaryId(new TCMURI(binaryMetaEntity.getPublicationId(), binaryMetaEntity.getBinaryId(), 16, 0));
 			binary.setType(binaryMetaEntity.getType());
 			List<BinaryVariant> bv = new ArrayList<BinaryVariant>();
 			for (com.sdl.web.content.client.odata.v2.edm.BinaryVariant binaryVariant : binaryMetaEntity.getBinaryVariants()) {
@@ -74,7 +74,7 @@ public class ODataV2ContentServiceClient implements ContentServiceClient {
 		com.sdl.web.content.client.odata.v2.edm.Page pageEntity = (com.sdl.web.content.client.odata.v2.edm.Page)contentClient.getEntity(com.sdl.web.content.client.odata.v2.edm.Page.class.getName(), query);
 		if (pageEntity != null) {
 			page = new Page();
-			page.setId(new TCMURI(pageEntity.getPublicationId(), pageEntity.getItemId(), 64, pageEntity.getMinorVersion()));
+			page.setItemId(new TCMURI(pageEntity.getPublicationId(), pageEntity.getItemId(), 64, pageEntity.getMinorVersion()));
 			page.setTitle(pageEntity.getTitle());
 			page.setUrl(pageEntity.getUrl());
 		}
