@@ -14,15 +14,11 @@ public class Page extends WebResourceItem {
 
 	private TCMURI itemId;
 
-	private TCMURI owningPublication;
-
 	private TCMURI templateId;
 
 	private String title;
 
 	private String author;
-
-	private String pagePath;
 
 	private ZonedDateTime creationDate;
 
@@ -31,6 +27,10 @@ public class Page extends WebResourceItem {
 	private ZonedDateTime initialPublishDate;
 
 	private ZonedDateTime lastPublishDate;
+
+	private String pagePath;
+
+	private TCMURI owningPublication;
 
 	private int majorVersion;
 
@@ -52,24 +52,6 @@ public class Page extends WebResourceItem {
 	 */
 	public void setItemId(TCMURI itemId) {
 		this.itemId = itemId;
-	}
-
-	/**
-	 * Gets the owning publication.
-	 * 
-	 * @return the owningPublication
-	 */
-	public TCMURI getOwningPublication() {
-		return owningPublication;
-	}
-
-	/**
-	 * Sets the owning publication.
-	 * 
-	 * @param owningPublication the owning publication to set
-	 */
-	public void setOwningPublication(TCMURI owningPublication) {
-		this.owningPublication = owningPublication;
 	}
 
 	/**
@@ -124,24 +106,6 @@ public class Page extends WebResourceItem {
 	 */
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-
-	/**
-	 * Gets the page path.
-	 * 
-	 * @return the pagePath
-	 */
-	public String getPagePath() {
-		return pagePath;
-	}
-
-	/**
-	 * Sets the page path.
-	 * 
-	 * @param pagePath the page path to set
-	 */
-	public void setPagePath(String pagePath) {
-		this.pagePath = pagePath;
 	}
 
 	/**
@@ -214,6 +178,42 @@ public class Page extends WebResourceItem {
 	 */
 	public void setLastPublishDate(ZonedDateTime lastPublishDate) {
 		this.lastPublishDate = lastPublishDate;
+	}
+
+	/**
+	 * Gets the page path.
+	 * 
+	 * @return the pagePath
+	 */
+	public String getPagePath() {
+		return pagePath;
+	}
+
+	/**
+	 * Sets the page path.
+	 * 
+	 * @param pagePath the page path to set
+	 */
+	public void setPagePath(String pagePath) {
+		this.pagePath = pagePath;
+	}
+
+	/**
+	 * Gets the owning publication.
+	 * 
+	 * @return the owningPublication
+	 */
+	public TCMURI getOwningPublication() {
+		return owningPublication;
+	}
+
+	/**
+	 * Sets the owning publication.
+	 * 
+	 * @param owningPublication the owning publication to set
+	 */
+	public void setOwningPublication(TCMURI owningPublication) {
+		this.owningPublication = owningPublication;
 	}
 
 	/**

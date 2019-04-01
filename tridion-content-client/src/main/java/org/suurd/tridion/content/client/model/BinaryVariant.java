@@ -36,7 +36,7 @@ public class BinaryVariant extends WebResourceItem {
 	/**
 	 * Sets the binary ID.
 	 * 
-	 * @param binaryId the binaryId to set
+	 * @param binaryId the binary ID to set
 	 */
 	public void setBinaryId(TCMURI binaryId) {
 		this.binaryId = binaryId;
@@ -97,7 +97,7 @@ public class BinaryVariant extends WebResourceItem {
 	}
 
 	/**
-	 * Gets the is component.
+	 * Gets if is component.
 	 * 
 	 * @return the isComponent
 	 */
@@ -106,7 +106,7 @@ public class BinaryVariant extends WebResourceItem {
 	}
 
 	/**
-	 * Sets the is component.
+	 * Sets if is component.
 	 * 
 	 * @param isComponent the is component to set
 	 */
@@ -144,7 +144,7 @@ public class BinaryVariant extends WebResourceItem {
 	/**
 	 * Sets the structure group ID.
 	 * 
-	 * @param structureGroupId the structureGroupId to set
+	 * @param structureGroupId the structure group ID to set
 	 */
 	public void setStructureGroupId(TCMURI structureGroupId) {
 		this.structureGroupId = structureGroupId;
