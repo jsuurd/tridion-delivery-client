@@ -15,6 +15,12 @@ Currently clients are provided for the following micro-services:
 
 * SDL Web 8.1.0 
 
-This project depends on proprietary libraries that are not publicly available. Use the `Install-LocalDependencies.ps1` script to install these dependencies to the local Maven repository.
+This project depends on proprietary libraries that are not publicly available. Use the install local dependencies script to install these dependencies to the local Maven repository.
 
-	.\Install-LocalDependencies.ps1 -Path <path-to-tridion-jars> 
+Windows:
+
+	.\Install-LocalDependencies.ps1 -Path <path-to-tridion-jars>
+	
+Linux:
+	
+	./install_local_dependencies.sh <path_to_tridion_jars> 
