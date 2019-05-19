@@ -4,20 +4,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Model representing a Tridion page content.
+ * Abstract model representing a Tridion web resource.
  * 
  * @author jsuurd
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class PageContent {
+public abstract class WebResource {
 
-	private int pageId;
-
-	private int publicationId;
-
-	private String content;
-
-	private String charSet;
+	private String url;
 
 }
