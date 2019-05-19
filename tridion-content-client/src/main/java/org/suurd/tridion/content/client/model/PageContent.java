@@ -1,24 +1,23 @@
 package org.suurd.tridion.content.client.model;
 
-import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Model representing a Tridion binary.
+ * Model representing a Tridion page content.
  * 
  * @author jsuurd
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Binary {
+public class PageContent {
 
-	private int binaryId;
+	private int pageId;
 
 	private int publicationId;
 
-	private String type;
+	private String content;
 
-	private List<BinaryVariant> binaryVariants;
+	private String charSet;
 
 }
