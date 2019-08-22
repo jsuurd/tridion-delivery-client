@@ -5,13 +5,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Model representing a Tridion page.
+ * Model representing a Tridion component.
  * 
  * @author jsuurd
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Page extends WebResource {
+public class Component {
 
 	private int itemId;
 
@@ -19,7 +19,7 @@ public class Page extends WebResource {
 
 	private int owningPublicationId;
 
-	private int templateId;
+	private int schemaId;
 
 	private String title;
 
@@ -37,6 +37,6 @@ public class Page extends WebResource {
 
 	private int minorVersion;
 
-	private String path;
+	private boolean isMultimedia;
 
 }
